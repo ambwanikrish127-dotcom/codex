@@ -30,6 +30,14 @@ const $ = (id) => document.getElementById(id);
 
 function save() {
   store.set("submissions", submissions);
+  // Dispatch custom event to notify React component of updates
+  window.dispatchEvent(new CustomEvent("submissions-updated", { detail: submissions }));
+}
+
+function resetSubmissions() {
+  submissions = {};
+  save();
+  renderList();
 }
 
 /* ---------- PAGE SWITCHING ---------- */

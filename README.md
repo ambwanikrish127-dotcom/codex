@@ -29,7 +29,7 @@ An interactive coding-practice site where you solve **Data Structures & Algorith
 smart-code-platform/
 ├── index.html    → structure: list page + solve page
 ├── style.css     → dark theme styling
-├── problems.js   → the 10 problems + their test cases
+├── problems.js   → the problems + their test cases
 ├── app.js        → list, filter, code runner, progress
 └── README.md
 ```

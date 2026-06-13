@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CodeArena — DSA Practice</title>
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- React, ReactDOM, and Babel CDNs -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
   <!-- ============ TOP BAR ============ -->
@@ -19,6 +24,9 @@
 
   <!-- ============ PROBLEM LIST PAGE ============ -->
   <main class="page" id="page-list">
+    <!-- React Dashboard Mount Point -->
+    <div id="dashboard-root"></div>
+
     <div class="controls">
       <input type="text" id="search-input" placeholder="Search by name or category…" />
       <select id="difficulty-filter">
@@ -72,5 +80,7 @@
   <!-- problems.js must load BEFORE app.js because app.js uses PROBLEMS -->
   <script src="problems.js"></script>
   <script src="app.js"></script>
+  <!-- React Dashboard Component -->
+  <script type="text/babel" src="dashboard.jsx"></script>
 </body>
 </html>
