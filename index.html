@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeArena — DSA Practice</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar">
+    <div class="logo">⚡ CodeArena</div>
+    <div class="stats">
+      <span id="solved-count">Solved: 0</span>
+      <span id="total-count">Total: 0</span>
+      <span id="progress-text">Progress: 0%</span>
+    </div>
+  </header>
+
+  <!-- ============ PROBLEM LIST PAGE ============ -->
+  <main class="page" id="page-list">
+    <div class="controls">
+      <input type="text" id="search-input" placeholder="Search by name or category…" />
+      <select id="difficulty-filter">
+        <option value="All">All difficulties</option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
+    </div>
+
+    <table class="problem-table">
+      <thead>
+        <tr>
+          <th>#</th><th>Title</th><th>Category</th><th>Difficulty</th><th>Status</th><th></th>
+        </tr>
+      </thead>
+      <tbody id="problem-table-body"></tbody>
+    </table>
+  </main>
+
+  <!-- ============ SOLVE PAGE ============ -->
+  <main class="page hidden" id="page-solve">
+    <button class="back-btn" onclick="goBack()">← Back to problems</button>
+
+    <div class="solve-grid">
+      <!-- left: problem statement -->
+      <section class="problem-panel">
+        <h2 id="p-title"></h2>
+        <div class="meta-row">
+          <span id="p-category" class="tag"></span>
+          <span id="p-difficulty" class="badge"></span>
+        </div>
+        <div id="p-description" class="description"></div>
+        <h4>Examples</h4>
+        <div id="p-examples"></div>
+      </section>
+
+      <!-- right: code editor + results -->
+      <section class="editor-panel">
+        <div class="editor-head">JavaScript</div>
+        <textarea id="code-editor" spellcheck="false"></textarea>
+        <div class="editor-actions">
+          <button class="reset-btn" onclick="resetCode()">Reset</button>
+          <button class="run-btn" onclick="runCode()">▶ Run tests</button>
+        </div>
+        <div id="results" class="results"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- problems.js must load BEFORE app.js because app.js uses PROBLEMS -->
+  <script src="problems.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
